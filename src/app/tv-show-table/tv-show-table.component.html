@@ -9,25 +9,25 @@
   </tr>
   </thead>
   <tbody>
-  <ng-container *ngIf="tvShowsResult$ | async as tvShowResult; else loading">
-    <tr *ngFor="let tvshow of tvShowResult.tv_shows; trackBy: trackById">
-      <td data-label="Name">{{tvshow.name}}</td>
-      <td data-label="Country">{{tvshow.country}}</td>
-      <td data-label="Year started">{{tvshow.start_date | date: 'yyyy'}}</td>
-      <td data-label="Status">{{tvshow.status}}</td>
-      <td data-label="Actions">
-        <span class="icon-info"></span>
-        <span class="icon-bookmark"></span>
-        <span class="icon-link"></span>
-      </td>
-    </tr>
-  </ng-container>
-  <ng-template #loading>
-    <tr>
-      <td rowspan="5">
-        <div class="spinner primary"></div>
-      </td>
-    </tr>
-  </ng-template>
+    <ng-container *ngIf="tvShowsResult$ | async as tvShowResult; else loading">
+      <tr *ngFor="let tvshow of tvShowResult.tv_shows; trackBy: trackById">
+        <td data-label="Name">{{tvshow.name}}</td>
+        <td data-label="Country">{{tvshow.country}}</td>
+        <td data-label="Year started">{{tvshow.start_date | date: 'yyyy'}}</td>
+        <td data-label="Status">{{tvshow.status}}</td>
+        <td data-label="Actions">
+          <span class="icon-info"></span>
+          <span class="icon-bookmark"></span>
+          <span class="icon-link"></span>
+        </td>
+      </tr>
+    </ng-container>
+    <ng-template #loading>
+      <tr class="loading">
+        <td rowspan="5">
+          <div class="spinner primary"></div>
+        </td>
+      </tr>
+    </ng-template>
   </tbody>
 </table>

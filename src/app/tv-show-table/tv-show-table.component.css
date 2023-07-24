@@ -1,0 +1,4 @@
+tr.loading td {
+  display: flex;
+  justify-content: center;
+}
