@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <form>
+      <form (submit)="$event.preventDefault();searchResult$ = tvshow.searchTvShowByName(name.value);">
         <fieldset>
           <legend>TV Show Search</legend>
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Name of the show"/>
+          <input #name type="text" id="name" placeholder="Name of the show"/>
           <button class="primary">Search</button>
         </fieldset>
       </form>
