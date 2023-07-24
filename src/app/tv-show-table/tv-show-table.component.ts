@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, Signal, TrackByFunction } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TvShow, TvShowSearch } from '../search-view/type';
 
 @Component({
   selector: 'app-tv-show-table',
@@ -9,5 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./tv-show-table.component.css']
 })
 export class TvShowTableComponent {
-
+  @Input() tvShowsResultSignal: Signal<TvShowSearch | undefined> | undefined;
+  protected trackById: TrackByFunction<TvShow> = (index: number, tvshow: TvShow) => tvshow.id;
+  empty = () => null;
 }
