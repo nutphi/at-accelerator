@@ -10,7 +10,7 @@ import { TvShow, TvShowSearch } from '../search-view/type';
   styleUrls: ['./tv-show-table.component.css']
 })
 export class TvShowTableComponent {
-  @Input() tvShowsResultSignal: Signal<TvShowSearch | undefined> | undefined;
+  @Input() tvShowsResult: TvShowSearch | undefined;
   protected trackById: TrackByFunction<TvShow> = (index: number, tvshow: TvShow) => tvshow.id;
   empty = () => null;
 }

@@ -9,8 +9,8 @@
   </tr>
   </thead>
   <tbody>
-    <ng-container  *ngIf="(tvShowsResultSignal || empty)() as result">
-      <tr *ngFor="let tvshow of result.tv_shows; trackBy: trackById">
+    <ng-container  *ngIf="tvShowsResult">
+      <tr *ngFor="let tvshow of tvShowsResult.tv_shows; trackBy: trackById">
         <td data-label="Name">{{tvshow.name}}</td>
         <td data-label="Country">{{tvshow.country}}</td>
         <td data-label="Year started">{{tvshow.start_date | date: 'yyyy'}}</td>
