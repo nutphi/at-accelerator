@@ -17,4 +17,4 @@ export interface TvShow {
   image_thumbnail_path: string;
 }
 
-export type Status = "Canceled/Ended" | "Ended";
+export type Status = "Canceled/Ended" | "Ended" | "Running" | "To Be Determined" | "In Development" | "New Series" | "TBD/On The Bubble";
