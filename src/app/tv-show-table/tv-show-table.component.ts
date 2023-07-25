@@ -11,6 +11,5 @@ import { TvShow, TvShowSearch } from '../search-view/type';
 })
 export class TvShowTableComponent {
   @Input() tvShowsResult: TvShowSearch | undefined;
-  protected trackById: TrackByFunction<TvShow> = (index: number, tvshow: TvShow) => tvshow.id;
   empty = () => null;
 }

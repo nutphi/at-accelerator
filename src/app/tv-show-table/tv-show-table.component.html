@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <ng-container  *ngIf="tvShowsResult">
-      <tr *ngFor="let tvshow of tvShowsResult.tv_shows; trackBy: trackById">
+      <tr *ngFor="let tvshow of tvShowsResult.tv_shows">
         <td data-label="Name">{{tvshow.name}}</td>
         <td data-label="Country">{{tvshow.country}}</td>
         <td data-label="Year started">{{tvshow.start_date | date: 'yyyy'}}</td>
