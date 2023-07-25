@@ -11,5 +11,4 @@ import { TvShow, TvShowSearch } from '../search-view/type';
 })
 export class TvShowTableComponent {
   @Input() tvShowsResult: TvShowSearch | undefined;
-  empty = () => null;
 }
