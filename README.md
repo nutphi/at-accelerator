@@ -1,3 +1,8 @@
+# Exercise 1: https://angular-training.getlearnworlds.com/path-player?courseid=angular-accelerator-program
+The exercise is on exercise1-{date}-{feature} branch
+- exercise1-24/07/2023 for observable solution
+- exercise1-24/07/2023-signal for signal solution
+
 # AtAccelerator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.
