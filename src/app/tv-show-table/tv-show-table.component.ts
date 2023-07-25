@@ -1,6 +1,6 @@
-import { Component, Input, TrackByFunction } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TvShow, TvShowSearch } from '../search-view/type';
+import { TvShowSearch } from '../search-view/type';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,5 +12,4 @@ import { Observable } from 'rxjs';
 })
 export class TvShowTableComponent {
   @Input() tvShowsResult$: Observable<TvShowSearch> | undefined; // add default tv show
-  protected trackById: TrackByFunction<TvShow> = (index: number, tvshow: TvShow) => tvshow.id;
 }
