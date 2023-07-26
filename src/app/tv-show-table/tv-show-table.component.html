@@ -9,7 +9,12 @@
   </tr>
   </thead>
   <tbody>
-    <ng-container  *ngIf="tvShowsResult; else loadingspinner">
+    <tr class="loading" *ngIf="isLoading">
+      <td rowspan="5">
+       <div class="spinner primary"></div>
+      </td>
+     </tr>
+    <ng-container  *ngIf="tvShowsResult">
       <tr *ngFor="let tvshow of tvShowsResult.tv_shows">
         <td data-label="Name">{{tvshow.name}}</td>
         <td data-label="Country">{{tvshow.country}}</td>
@@ -22,12 +27,5 @@
         </td>
       </tr>
     </ng-container>
-    <ng-template #loadingspinner>
-      <tr class="loading">
-       <td rowspan="5">
-        <div class="spinner primary"></div>
-       </td>
-      </tr>
-     </ng-template>
   </tbody>
 </table>

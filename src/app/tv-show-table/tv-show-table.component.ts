@@ -10,5 +10,6 @@ import { TvShow, TvShowSearch } from '../search-view/type';
   styleUrls: ['./tv-show-table.component.css']
 })
 export class TvShowTableComponent {
-  @Input() tvShowsResult!: TvShowSearch| null;
+  @Input() tvShowsResult!: TvShowSearch | null;
+  @Input() isLoading!: boolean;
 }
