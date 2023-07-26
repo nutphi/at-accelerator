@@ -9,13 +9,11 @@ export class TvShowService {
   
   private searchName = signal<string>("");
   
-  private readonly result$ = toObservable(this.searchName).pipe(
-    switchMap((name: string) => {
-      const nameSearch = name ? `q=${name}&` : '';
-      return this.http.get<TvShowSearch>(`https://www.episodate.com/api/search?${nameSearch}page=1`);
-    }));
-
-  searchResultSignal = toSignal(this.result$);
+  searchResultSignal = computed(() => {
+    const name = this.searchName();
+    const nameSearch = name ? `q=${name}&` : '';
+    return this.http.get<TvShowSearch>(`https://www.episodate.com/api/search?${nameSearch}page=1`);
+  });
 
   constructor(private http: HttpClient) {
   }
