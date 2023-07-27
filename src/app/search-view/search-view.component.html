@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <form (submit)="$event.preventDefault();searchResult$ = tvshow.searchTvShowByName(name.value);">
+      <form (submit)="onSearch(name.value, $event)">
         <fieldset>
           <legend>TV Show Search</legend>
           <label for="name">Name</label>
@@ -13,7 +13,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <app-tv-show-table [tvShowsResult$]="searchResult$"></app-tv-show-table>
+        <app-tv-show-table [tvShowsResult$]="tvshow.searchResult$" [isLoading$]="tvshow.isLoading$"></app-tv-show-table>
       </div>
   </div>
 </div>

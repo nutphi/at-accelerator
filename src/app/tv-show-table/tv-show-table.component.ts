@@ -11,5 +11,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./tv-show-table.component.css']
 })
 export class TvShowTableComponent {
-  @Input() tvShowsResult$: Observable<TvShowSearch> | undefined; // add default tv show
+  @Input() tvShowsResult$!: Observable<TvShowSearch>; // add default tv show
+  @Input() isLoading$!: Observable<boolean>;
 }

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {TvShowTableComponent} from '../tv-show-table/tv-show-table.component';
+import { TvShowTableComponent } from '../tv-show-table/tv-show-table.component';
 import { TvShowService } from '../tv-show.service';
-import { TvShowSearch } from './type';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search-view',
@@ -14,8 +12,10 @@ import { Observable } from 'rxjs';
   providers: [TvShowService]
 })
 export class SearchViewComponent {
-  protected searchResult$: Observable<TvShowSearch> | undefined;
-  constructor(protected tvshow: TvShowService) {
-    this.searchResult$ = tvshow.searchTvShowByName();
+  constructor(protected tvshow: TvShowService) { }
+
+  onSearch(term: string, $event: Event) {
+    $event.preventDefault();
+    this.tvshow.term = term;
   }
 }
