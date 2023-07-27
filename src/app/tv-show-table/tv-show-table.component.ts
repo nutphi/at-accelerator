@@ -1,4 +1,4 @@
-import { Component, Input, Signal, TrackByFunction } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TvShow, TvShowSearch } from '../search-view/type';
 
@@ -12,4 +12,6 @@ import { TvShow, TvShowSearch } from '../search-view/type';
 export class TvShowTableComponent {
   @Input() tvShowsResult!: TvShowSearch | null;
   @Input() isLoading!: boolean;
+  @Input() favoriteShows!: TvShow['id'][];
+  @Output() toggleFavorite: EventEmitter<TvShow['id']> = new EventEmitter<TvShow['id']>();
 }
