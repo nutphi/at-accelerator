@@ -13,7 +13,11 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <app-tv-show-table [tvShowsResult]="tvShow.searchResultSignal()" [isLoading]="tvShow.isLoadingSignal()"></app-tv-show-table>
+        <app-tv-show-table
+        [tvShowsResult]="tvShow.searchResultSignal()"
+          [favoriteShows]="favorites.favoritesSignal()"
+          [isLoading]="tvShow.isLoadingSignal()"
+          (toggleFavorite)="onFavoriteToggle($event)"></app-tv-show-table>
       </div>
   </div>
 </div>
