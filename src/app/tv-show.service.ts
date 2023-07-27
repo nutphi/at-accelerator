@@ -1,13 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Signal, signal, computed, inject, Injector, effect } from '@angular/core';
-import { toSignal, toObservable } from '@angular/core/rxjs-interop';
+import { Injectable, Signal, signal } from '@angular/core';
 import { TvShowSearch } from './search-view/type';
-import { Observable, of, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class TvShowService {
-  
-  private searchName = signal<string>("");
   private searchResult = signal<TvShowSearch | null>(null);
 
   get searchResultSignal(): Signal<TvShowSearch | null> {
@@ -21,26 +18,19 @@ export class TvShowService {
   }
 
   constructor(private http: HttpClient) {
-    effect(() => {
-      this.isLoading.set(true);
-      this.searchResult.set(null);
+  }
 
-      this.getTvShowSearchApi(this.searchName())
-        .subscribe((searchResult) => {
-          this.searchResult.set(searchResult);
-          this.isLoading.set(false);
-      });
-    }, {
-      allowSignalWrites: true
+  updateSearchResult(term?: string): void {
+    this.isLoading.set(true);
+    this.searchResult.set(null);
+    this.searchApi(term).subscribe((tvshow: TvShowSearch) => {
+      this.isLoading.set(false);
+      this.searchResult.set(tvshow);
     });
   }
 
-  getTvShowSearchApi(name: string): Observable<TvShowSearch> {
-    const nameSearch = name ? `q=${name}&` : '';
-    return this.http.get<TvShowSearch>(`https://www.episodate.com/api/search?${nameSearch}page=1`);
-  }
-
-  changeSearchName(name: string): void {
-    this.searchName.set(name);
+  private searchApi(term?: string): Observable<TvShowSearch>{
+    const termParam = term ? `q=${term}&` : '';
+    return this.http.get<TvShowSearch>(`https://www.episodate.com/api/search?${termParam}page=1`);
   }
 }
