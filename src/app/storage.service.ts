@@ -1,13 +1,5 @@
 import { Injectable } from '@angular/core';
-
-export function isSupportedJsonParse(str: string) {
-  try {
-      JSON.parse(str);
-  } catch (e) {
-      return false;
-  }
-  return true;
-}
+import { isSupportedJsonParse } from './utils';
 
 @Injectable()
 export class StorageService<T> {
@@ -19,12 +11,12 @@ export class StorageService<T> {
     window.localStorage.setItem(name, strValue);
   }
 
-  getLocalStorage(name: string): T | null {
+  getLocalStorage(name: string, defaultValue: T): T {
     const strValue = window.localStorage.getItem(name);
     if (strValue && isSupportedJsonParse(strValue)) {
       return JSON.parse(strValue);
     } else {
-      return null;
+      return defaultValue;
     }
   }
 }
