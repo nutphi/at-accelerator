@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {TvShowTableComponent} from '../tv-show-table/tv-show-table.component';
 import { TvShowService } from '../tv-show.service';
@@ -14,10 +14,11 @@ import { TvShowService } from '../tv-show.service';
 export class SearchViewComponent {
 
   constructor(protected tvShow: TvShowService) {
+    this.tvShow.updateSearchResult();
   }
 
   onSearch(name: string, $event: Event) {
     $event.preventDefault();
-    this.tvShow.changeSearchName(name);
+    this.tvShow.updateSearchResult(name);
   }
 }
