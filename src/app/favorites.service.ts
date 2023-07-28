@@ -4,15 +4,15 @@ import { TvShow } from './search-view/type';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
-export class FavoriteService {
+export class FavoritesService {
   static readonly FAVORITE_KEY = 'favorites';
-  private _favorites: BehaviorSubject<TvShow['id'][] | null> = new BehaviorSubject(this.storage.getlocalObject(FavoriteService.FAVORITE_KEY));
+  private _favorites: BehaviorSubject<TvShow['id'][] | null> = new BehaviorSubject(this.storage.getlocalObject(FavoritesService.FAVORITE_KEY));
   favorites$ = this._favorites.asObservable();
 
   constructor(private storage: StorageService<TvShow['id'][]>) {
     this.favorites$.subscribe((favorites) => {
       if (favorites) {
-        storage.setlocalObject(FavoriteService.FAVORITE_KEY, favorites);
+        storage.setlocalObject(FavoritesService.FAVORITE_KEY, favorites);
       }
     });
   }

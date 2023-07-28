@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TvShowTableComponent } from '../tv-show-table/tv-show-table.component';
 import { TvShowService } from '../tv-show.service';
-import { FavoriteService } from '../favorite.service';
+import { FavoritesService } from '../favorites.service';
 import { StorageService } from '../storage.service';
 
 @Component({
@@ -11,10 +11,10 @@ import { StorageService } from '../storage.service';
   imports: [CommonModule, TvShowTableComponent],
   templateUrl: './search-view.component.html',
   styleUrls: ['./search-view.component.css'],
-  providers: [TvShowService, FavoriteService, StorageService]
+  providers: [TvShowService, FavoritesService, StorageService]
 })
 export class SearchViewComponent {
-  constructor(protected tvshow: TvShowService, protected favorites: FavoriteService) { }
+  constructor(protected tvshow: TvShowService, protected favorites: FavoritesService) { }
 
   onSearch(term: string, $event: Event) {
     $event.preventDefault();
