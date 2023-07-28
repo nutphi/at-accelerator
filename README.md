@@ -1,7 +1,10 @@
-# Exercise 1: https://angular-training.getlearnworlds.com/path-player?courseid=angular-accelerator-program
-The exercise is on exercise1-{date}-{feature} branch
+# Exercise: https://angular-training.getlearnworlds.com/path-player?courseid=angular-accelerator-program
+The exercise is on exercise{no}-{date}-{feature} branch
 - exercise1-24/07/2023 for observable solution
 - exercise1-24/07/2023-signal for signal solution
+- exercise1-26/07/2023-signal for signal solution (updated - removed switchmap)
+- exercise1-27/07/2023 for observable solution
+- exercise1-27/07/2023-signal for signal solution
 
 # AtAccelerator
 
