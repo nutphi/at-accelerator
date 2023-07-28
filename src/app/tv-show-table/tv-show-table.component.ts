@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TvShowSearch } from '../search-view/type';
+import { TvShow, TvShowSearch } from '../search-view/type';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -13,4 +13,6 @@ import { Observable } from 'rxjs';
 export class TvShowTableComponent {
   @Input() tvShowsResult$!: Observable<TvShowSearch>; // add default tv show
   @Input() isLoading$!: Observable<boolean>;
+  @Input() favorites$!: Observable<TvShow['id'][] | null>
+  @Output() toggleFavorite: EventEmitter<TvShow['id']> = new EventEmitter<TvShow['id']>();
 }

@@ -9,7 +9,7 @@
   </tr>
   </thead>
   <tbody>
-    <ng-container *ngIf="{ tvShowResult: tvShowsResult$| async, isLoading: isLoading$ | async } as searchObject;">
+    <ng-container *ngIf="{ tvShowResult: tvShowsResult$| async, isLoading: isLoading$ | async, favorites: favorites$ | async } as searchObject;">
       <tr class="loading" *ngIf="searchObject.isLoading as isLoading">
         <td rowspan="5">
           <div class="spinner primary"></div>
@@ -23,7 +23,7 @@
           <td data-label="Status">{{tvshow.status}}</td>
           <td data-label="Actions">
             <span class="icon-info"></span>
-            <span class="icon-bookmark"></span>
+            <span class="icon-bookmark" (click)="toggleFavorite.emit(tvshow.id)" [class.highlight]="searchObject.favorites?.indexOf(tvshow.id) !== -1"></span>
             <span class="icon-link"></span>
           </td>
         </tr>
