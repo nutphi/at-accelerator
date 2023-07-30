@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TvShow, TvShowSearch } from '../search-view/type';
 
@@ -7,7 +7,8 @@ import { TvShow, TvShowSearch } from '../search-view/type';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './tv-show-table.component.html',
-  styleUrls: ['./tv-show-table.component.css']
+  styleUrls: ['./tv-show-table.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush // if you have only input output, it is better to add ChangeDetectionStrategy.OnPush so the change detection won't trigger until the data changes
 })
 export class TvShowTableComponent {
   @Input() tvShowsResult!: TvShowSearch | null;

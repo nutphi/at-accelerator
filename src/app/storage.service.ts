@@ -10,13 +10,12 @@ export class StorageService<T> {
 
   constructor() { }
 
-  getStorageEvent(key: string): T | undefined {
+  getStorageEvent(key: string): T | null {
     const event = this.storageSignal() as StorageEvent;
-      if (event?.key === key) {
-        const newValue = JSON.parse(event.newValue || '[]');
-        return newValue;
+      if (event?.key === key && event.newValue) {
+        return isSupportedJsonParse(event.newValue) ? JSON.parse(event.newValue) : event.newValue;
       } else {
-        return undefined;
+        return null;
       }
   }
 
@@ -24,12 +23,11 @@ export class StorageService<T> {
     const strValue = typeof(value) !== "string" ? JSON.stringify(value) : value;
     window.localStorage.setItem(key, strValue);
   }
-  
 
   getLocalStorage(key: string, defaultValue: T): T {
     const strValue = window.localStorage.getItem(key);
-    if (strValue && isSupportedJsonParse(strValue)) {
-      return JSON.parse(strValue);
+    if (strValue) {
+      return isSupportedJsonParse(strValue) ? JSON.parse(strValue) : strValue;
     } else {
       return defaultValue;
     }
