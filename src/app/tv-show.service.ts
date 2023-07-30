@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Signal, signal } from '@angular/core';
+import { DestroyRef, Injectable, Signal, signal } from '@angular/core';
 import { TvShowSearch } from './search-view/type';
 import { Observable } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Injectable()
 export class TvShowService {
@@ -17,13 +18,13 @@ export class TvShowService {
     return this.isLoading.asReadonly();
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private destroyRef: DestroyRef) {
   }
 
   updateSearchResult(term?: string): void {
     this.isLoading.set(true);
     this.searchResult.set(null);
-    this.searchApi(term).subscribe((tvshow: TvShowSearch) => {
+    this.searchApi(term).pipe(takeUntilDestroyed(this.destroyRef)).subscribe((tvshow: TvShowSearch) => { // angular 16 - takeUntilDestroyed
       this.isLoading.set(false);
       this.searchResult.set(tvshow);
     });
