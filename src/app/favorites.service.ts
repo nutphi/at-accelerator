@@ -1,6 +1,6 @@
 import { computed, effect, Injectable, signal } from '@angular/core';
 import { StorageService } from './storage.service';
-import { TvShow } from './search-view/type';
+import { TvShow } from './type';
 import { fromEvent } from 'rxjs';
 
 @Injectable()

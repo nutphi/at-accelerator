@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { DestroyRef, Injectable, Signal, signal } from '@angular/core';
-import { TvShowSearch } from './search-view/type';
+import { TvShowSearch } from './type';
 import { Observable } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TvShow, TvShowSearch } from '../search-view/type';
+import { TvShow, TvShowSearch } from '../type';
 
 @Component({
   selector: 'app-tv-show-table',

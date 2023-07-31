@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {TvShowTableComponent} from '../tv-show-table/tv-show-table.component';
 import { TvShowService } from '../tv-show.service';
 import { FavoritesService } from '../favorites.service';
-import { TvShow } from './type';
+import { TvShow } from '../type';
 import { StorageService } from '../storage.service';
 
 @Component({
