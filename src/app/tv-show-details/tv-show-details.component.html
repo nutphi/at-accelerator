@@ -1,0 +1,10 @@
+<ng-container *ngIf="tvShow?.tvShow as detail">
+  <h1 class="head">{{detail.name}}</h1>
+  <hr class="line">
+  <div class="detail">
+    <img class="img" [src]="detail.image_thumbnail_path">
+    <div class="description" [innerHTML]="detail.description"></div>
+    <div class="rate">Rating: {{detail.rating | number: '1.0-2' }}/10 (rated by {{detail.rating_count}} people)</div>
+  </div>
+</ng-container>
+<button class="primary" routerLink="./../../">< < Back</button>
