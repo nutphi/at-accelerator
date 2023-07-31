@@ -21,7 +21,7 @@
         <td data-label="Year started">{{tvshow.start_date | date: 'yyyy'}}</td>
         <td data-label="Status">{{tvshow.status}}</td>
         <td data-label="Actions">
-          <span class="icon-info"></span>
+          <span class="icon-info" [routerLink]="['./details', tvshow.id]"></span>
           <span class="icon-bookmark" [class.highlight]="favoriteShows.indexOf(tvshow.id) !== -1" (click)="toggleFavorite.emit(tvshow.id)"></span>
           <span class="icon-link"></span>
         </td>
