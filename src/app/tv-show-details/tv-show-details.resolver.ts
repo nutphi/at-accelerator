@@ -1,13 +1,13 @@
 import { ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot } from "@angular/router";
-import { TvShowDetail } from "../type";
+import { TvShowDetailResult } from "../type";
 import { inject } from "@angular/core";
 import { Observable } from "rxjs";
 import { TvShowDetailsService } from "../tv-show-details.service";
 
-export const TvShowDetailResolver: ResolveFn<TvShowDetail | null> = (
+export const TvShowDetailResolver: ResolveFn<TvShowDetailResult | null> = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot  
-): Observable<TvShowDetail | null> => {
+): Observable<TvShowDetailResult | null> => {
   const tvShowDetails = inject(TvShowDetailsService);
   return tvShowDetails.showInfoApi(+route.params['id']);
 }
