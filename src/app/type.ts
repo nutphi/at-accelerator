@@ -20,26 +20,27 @@ export interface TvShow {
 export type Status = "Canceled/Ended" | "Ended" | "Running" | "To Be Determined" | "In Development" | "New Series" | "TBD/On The Bubble";
 
 
-export interface TvShowDetail {
+export interface TvShowDetailResult {
   tvShow: TvShow;
 }
 
-export interface TvShow {
-  id:                   number;
-  name:                 string;
-  permalink:            string;
+export interface TvShowDetail extends TvShow {
+  // the comments are from TvShow interface
+  // id:                   number;
+  // name:                 string;
+  // permalink:            string;
+  // start_date:           string;
+  // end_date:             string|null;
+  // country:              string;
+  // status:               Status;
+  // network:              string;
+  // image_thumbnail_path: string;
   url:                  string;
   description:          string;
   description_source:   null;
-  start_date:           string;
-  end_date:             string|null;
-  country:              string;
-  status:               Status;
   runtime:              number;
-  network:              string;
   youtube_link:         null;
   image_path:           string;
-  image_thumbnail_path: string;
   rating:               number;
   rating_count:         string;
   countdown:            null;
