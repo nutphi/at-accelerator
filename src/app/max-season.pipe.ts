@@ -3,7 +3,8 @@ import { Episode } from './type';
 
 @Pipe({
   name: 'maxSeason',
-  standalone: true
+  standalone: true,
+  pure: true
 })
 export class MaxSeasonPipe implements PipeTransform {
 
