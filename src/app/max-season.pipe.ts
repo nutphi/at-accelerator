@@ -10,7 +10,7 @@ export class MaxSeasonPipe implements PipeTransform {
 
   transform(value: Episode[]): number {
     const seasons = value.map(episode => episode.season);
-    return Math.max(... seasons);
+    return seasons.length ? Math.max(... seasons): 0;
   }
 
 }
