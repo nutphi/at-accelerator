@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchViewComponent } from './search-view.component';
+import SearchViewComponent from './search-view.component';
 
 describe('SearchViewComponent', () => {
   let component: SearchViewComponent;
