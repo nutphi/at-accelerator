@@ -7,7 +7,7 @@ import { TvShowDetailResolver } from './tv-show-details/tv-show-details.resolver
 
 const routes: Routes = [
   {path: "", component: SearchViewComponent},
-  {path: "details/:id", component: TvShowDetailsComponent, resolve: { tvShow: TvShowDetailResolver }},
+  {path: "details/:id", component: TvShowDetailsComponent, resolve: { tvShowResult: TvShowDetailResolver }},
   {path: "favorites", component: FavoritesViewComponent}
 ];
 
