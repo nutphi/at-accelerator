@@ -21,7 +21,7 @@ export type Status = "Canceled/Ended" | "Ended" | "Running" | "To Be Determined"
 
 
 export interface TvShowDetailResult {
-  tvShow: TvShow;
+  tvShow: TvShowDetail;
 }
 
 export interface TvShowDetail extends TvShow {
