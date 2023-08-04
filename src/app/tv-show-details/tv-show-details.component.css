@@ -4,3 +4,7 @@
   row-gap: 25px;
   padding: 10px;
 }
+
+:host .episodes-seasons {
+  padding: 10px;
+}
