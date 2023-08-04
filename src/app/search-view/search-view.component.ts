@@ -14,7 +14,7 @@ import { StorageService } from '../storage.service';
   styleUrls: ['./search-view.component.css'],
   providers: [TvShowService, FavoritesService, StorageService]
 })
-export class SearchViewComponent {
+export default class SearchViewComponent {
 
   constructor(protected tvShow: TvShowService, protected favorites: FavoritesService) {
     this.tvShow.updateSearchResult();
