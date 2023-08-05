@@ -1,7 +1,6 @@
-import { computed, effect, Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 import { StorageService } from './storage.service';
 import { TvShow } from './search-view/type';
-import { fromEvent } from 'rxjs';
 
 @Injectable()
 export class FavoritesService {
