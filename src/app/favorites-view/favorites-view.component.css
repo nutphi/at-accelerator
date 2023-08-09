@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.head {
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+
+.action {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  height: 50px;
+}
+
+.footer {
+  padding: 5px;
+}
