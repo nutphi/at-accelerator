@@ -1,1 +1,11 @@
-<p>favorites-view works!</p>
+<section class="card shadowed" *ngFor="let detail of favorites.favoritesDetailSignal(); trackBy: trackTvShowId">
+  <div class="head">
+    <h3>{{detail.name}}</h3>
+    <div class="action">
+      <span class="icon-info" [routerLink]="['../details', detail.id]"></span>
+      <span class="icon-bookmark highlight" (click)="favorites.toggleFavorite(detail.id)"></span>
+    </div>
+  </div>
+  <img class="section media" [src]="detail.image_thumbnail_path">    
+  <footer class="footer">Next Episode: {{detail?.countdown?.air_date | date: 'MMM dd, yyyy'}}</footer>
+</section>
