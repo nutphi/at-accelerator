@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { FavoritesService } from '../favorites.service';
-import { NgIf, NgFor, DecimalPipe, I18nPluralPipe, JsonPipe, DatePipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { MaxSeasonPipe } from '../max-season.pipe';
+import { NgFor } from '@angular/common';
 import { StorageService } from '../storage.service';
 import { TvShowDetail } from '../type';
+import { FavoriteCardComponent } from '../favorite-card/favorite-card.component';
 
 @Component({
   selector: 'app-favorites-view',
   standalone: true,
-  imports: [NgIf, NgFor, RouterLink, DatePipe],
+  imports: [NgFor, FavoriteCardComponent],
   providers: [FavoritesService, StorageService],
   templateUrl: './favorites-view.component.html',
   styleUrls: ['./favorites-view.component.css']
