@@ -9,7 +9,6 @@ export class FavoriteToggleDirective {
   @Input({required: true, alias: 'appFavoriteToggle'}) id!: number;
 
   @HostBinding('class.highlight') get highlight() {
-    console.log(this.favorite.favoritesSignal().indexOf(this.id) !== -1);
     return this.favorite.favoritesSignal().indexOf(this.id) !== -1;
   }
 
