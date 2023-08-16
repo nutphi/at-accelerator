@@ -6,7 +6,7 @@ import { FavoritesService } from './favorites.service';
   standalone: true
 })
 export class FavoriteToggleDirective {
-  @Input('id') id!: number;
+  @Input({required: true, alias: 'appFavoriteToggle'}) id!: number;
 
   @HostBinding('class.highlight') get highlight() {
     console.log(this.favorite.favoritesSignal().indexOf(this.id) !== -1);
