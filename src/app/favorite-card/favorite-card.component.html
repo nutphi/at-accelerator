@@ -3,7 +3,7 @@
     <h3>{{detail.name}}</h3>
     <div class="action">
       <span class="icon-info" [routerLink]="['../details', detail.id]"></span>
-      <span class="icon-bookmark highlight" [id]="detail.id" appFavoriteToggle></span>
+      <span class="icon-bookmark highlight" [appFavoriteToggle]="detail.id"></span>
     </div>
   </div>
   <div class="section media">

@@ -17,5 +17,5 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class FavoriteCardComponent {
   @Input() detail!: TvShowDetail;
 
-  constructor(protected favorites: FavoritesService, private dom: DomSanitizer) { }
+  constructor() { }
 }
