@@ -3,11 +3,11 @@
     <h3>{{detail.name}}</h3>
     <div class="action">
       <span class="icon-info" [routerLink]="['../details', detail.id]"></span>
-      <span class="icon-bookmark highlight" (click)="favorites.toggleFavorite(detail.id)"></span>
+      <span class="icon-bookmark highlight" [id]="detail.id" appFavoriteToggle></span>
     </div>
   </div>
   <div class="section media">
     <img [src]="detail.image_thumbnail_path">    
   </div>
-  <footer class="footer">Next Episode: {{detail?.countdown?.air_date | date: 'MMM dd, yyyy'}}</footer>
+  <footer class="footer">{{detail.countdown?.air_date | countDown: detail.status }}</footer>
 </section>
