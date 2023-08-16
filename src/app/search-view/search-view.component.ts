@@ -5,11 +5,12 @@ import { TvShowService } from '../tv-show.service';
 import { FavoritesService } from '../favorites.service';
 import { TvShow } from '../type';
 import { StorageService } from '../storage.service';
+import { PaginatorComponent } from '../paginator/paginator.component';
 
 @Component({
   selector: 'app-search-view',
   standalone: true,
-  imports: [CommonModule, TvShowTableComponent],
+  imports: [CommonModule, TvShowTableComponent, PaginatorComponent],
   templateUrl: './search-view.component.html',
   styleUrls: ['./search-view.component.css'],
   providers: [TvShowService, FavoritesService, StorageService]

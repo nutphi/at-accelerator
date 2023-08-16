@@ -10,14 +10,15 @@
         </fieldset>
       </form>
     </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <app-tv-show-table
-          [tvShowsResult]="tvShow.searchResultSignal()"
-          [favoriteShows]="favorites.favoritesSignal()"
-          [isLoading]="tvShow.isLoadingSignal()"
-          (toggleFavorite)="onFavoriteToggle($event)"></app-tv-show-table>
-      </div>
   </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <app-tv-show-table
+        [tvShowsResult]="tvShow.searchResultSignal()"
+        [favoriteShows]="favorites.favoritesSignal()"
+        [isLoading]="tvShow.isLoadingSignal()"
+        (toggleFavorite)="onFavoriteToggle($event)"></app-tv-show-table>
+    </div>
+  </div>
+  <app-paginator *ngIf="tvShow.searchResultSignal() as pagination" [pagination]="pagination"></app-paginator>
 </div>
