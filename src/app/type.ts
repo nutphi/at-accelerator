@@ -1,7 +1,10 @@
-export interface TvShowSearch {
+export interface Pagination {
+  page:     number; // current page
+  pages:    number; // total page
+}
+
+export interface TvShowSearch extends Pagination {
   total:    string;
-  page:     number;
-  pages:    number;
   tv_shows: TvShow[];
 }
 
