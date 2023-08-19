@@ -1,5 +1,4 @@
-import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
-import { TvShowService } from './tv-show.service';
+import { Directive, ElementRef, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
 import { Pagination } from './type';
 
 @Directive({
@@ -7,10 +6,12 @@ import { Pagination } from './type';
   standalone: true
 })
 export class PaginationDirective {
-
-  constructor(private tvShow: TvShowService, private element: ElementRef) { }
+  toPage!: number;
+  textContent!: string;
+  constructor(private element: ElementRef) { }
 
   @Input({required: true, alias: 'appPagination'}) pagination!: Pagination;
+  @Output() goToPage: EventEmitter<number> = new EventEmitter<number>();
 
   @HostBinding('disabled')
   @HostBinding('class.secondary') get isDisabled() {
@@ -26,11 +27,7 @@ export class PaginationDirective {
     }
   }
 
-  @HostBinding('class.hidden') get isHidden() {
-    return this.pagination.pages === 1;
-  }
-
-  @HostListener('click') updatePage() {
+  @HostBinding('textContent') get contentChanges () {
     let currentPage = this.pagination.page;
     switch(this.element.nativeElement.textContent) {
       case '<<':
@@ -46,7 +43,12 @@ export class PaginationDirective {
         currentPage = this.pagination.pages;
         break;
     }
-    this.tvShow.setPage(currentPage);
+    this.toPage = currentPage;
+    return this.element.nativeElement.textContent;
+  }
+
+  @HostListener('click') updatePage() {
+    this.goToPage.emit(this.toPage);
   }
 
 }

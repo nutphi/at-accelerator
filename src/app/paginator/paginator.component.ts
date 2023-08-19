@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Output, EventEmitter } from '@angular/core';
 import { Pagination } from '../type';
 import { PaginationDirective } from '../pagination.directive';
 
@@ -12,4 +12,6 @@ import { PaginationDirective } from '../pagination.directive';
 })
 export class PaginatorComponent {
   @Input({required: true}) pagination!: Pagination;
+  @Output() goToPage: EventEmitter<number> = new EventEmitter<number>();
+  constructor() { }
 }
