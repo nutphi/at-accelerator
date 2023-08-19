@@ -20,5 +20,11 @@
         (toggleFavorite)="onFavoriteToggle($event)"></app-tv-show-table>
     </div>
   </div>
-  <app-paginator *ngIf="tvShow.searchResultSignal() as pagination" [pagination]="pagination"></app-paginator>
+  <ng-container *ngIf="tvShow.searchResultSignal() as pagination">
+    <app-paginator
+      *ngIf="pagination.pages >= 1"
+      [pagination]="pagination"
+      (goToPage)="tvShow.setPage($event)">
+    </app-paginator>
+  </ng-container>
 </div>

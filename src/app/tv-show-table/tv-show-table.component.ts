@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, QueryList, ViewChildren } from '@angular/core';
 import { DatePipe, NgIf, NgFor } from '@angular/common';
 import { TvShow, TvShowSearch } from '../type';
 import { RouterLink } from '@angular/router';
@@ -17,4 +17,5 @@ export class TvShowTableComponent {
   @Input() isLoading!: boolean;
   @Input() favoriteShows!: TvShow['id'][];
   @Output() toggleFavorite: EventEmitter<TvShow['id']> = new EventEmitter<TvShow['id']>();
+  @ViewChildren('list') list!: QueryList<ElementRef>;
 }
