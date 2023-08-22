@@ -22,7 +22,7 @@
   </div>
   <ng-container *ngIf="tvShow.searchResultSignal() as pagination">
     <app-paginator
-      *ngIf="pagination.pages >= 1"
+      *ngIf="pagination.pages > 1"
       [pagination]="pagination"
       (goToPage)="tvShow.setPage($event)">
     </app-paginator>

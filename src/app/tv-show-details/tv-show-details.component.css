@@ -8,3 +8,11 @@
 :host .episodes-seasons {
   padding: 10px;
 }
+
+img {
+  width: 40%;
+}
+
+img[main] {
+  width: 100%;
+}

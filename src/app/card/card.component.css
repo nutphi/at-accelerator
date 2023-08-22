@@ -1,0 +1,23 @@
+
+:host header {
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+
+:host h4 {
+  width: 100%;
+}
+
+:host footer {
+  padding: 5px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+:host .card {
+  max-width: fit-content;
+  display: flex;
+  justify-content: center;
+}

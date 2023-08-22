@@ -1,13 +1,10 @@
-<section class="card shadowed">
-  <div class="head">
-    <h3>{{detail.name}}</h3>
-    <div class="action">
-      <span class="icon-info" [routerLink]="['../details', detail.id]"></span>
-      <span class="icon-bookmark highlight" [appFavoriteToggle]="detail.id"></span>
-    </div>
+<app-card [name]="detail.name">
+  <div action-icons class="action">
+    <span class="icon-info" [routerLink]="['../details', detail.id]"></span>
+    <span class="icon-bookmark highlight" [appFavoriteToggle]="detail.id"></span>
   </div>
-  <div class="section media">
-    <img [src]="detail.image_thumbnail_path">    
+  <div main class="section media">
+    <img [src]="detail.image_thumbnail_path">
   </div>
-  <footer class="footer">{{detail.countdown?.air_date | countDown: detail.status }}</footer>
-</section>
+  <ng-container footer>{{detail.countdown?.air_date | countDown: detail.status }}</ng-container>
+</app-card>
