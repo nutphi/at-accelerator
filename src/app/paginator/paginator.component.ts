@@ -12,6 +12,7 @@ import { PaginationDirective } from '../pagination.directive';
 })
 export class PaginatorComponent {
   @Input({required: true}) pagination!: Pagination;
+  @Input() isLoading!: boolean;
   @Output() goToPage: EventEmitter<number> = new EventEmitter<number>();
   constructor() { }
 }
