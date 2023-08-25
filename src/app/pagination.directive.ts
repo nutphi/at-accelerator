@@ -11,11 +11,16 @@ export class PaginationDirective {
   constructor(private element: ElementRef) { }
 
   @Input({required: true, alias: 'appPagination'}) pagination!: Pagination;
+  @Input() type!: '<<' | '<' | '>' | '>>';
+  @Input() isLoading!: boolean;
   @Output() goToPage: EventEmitter<number> = new EventEmitter<number>();
 
   @HostBinding('disabled')
   @HostBinding('class.secondary') get isDisabled() {
-    switch(this.element.nativeElement.textContent) {
+    if (this.isLoading) {
+      return true;
+    }
+    switch(this.type) {
       case '<<':
       case '<':
         return this.pagination.page <= 1;
@@ -29,7 +34,7 @@ export class PaginationDirective {
 
   @HostBinding('textContent') get contentChanges () {
     let currentPage = this.pagination.page;
-    switch(this.element.nativeElement.textContent) {
+    switch(this.type) {
       case '<<':
         currentPage = 1;
         break;
