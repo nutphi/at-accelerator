@@ -16,3 +16,10 @@ img {
 img[main] {
   width: 100%;
 }
+
+dialog {
+  /* width: 50vw; */
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+}

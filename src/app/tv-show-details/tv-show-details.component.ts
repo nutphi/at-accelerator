@@ -17,9 +17,5 @@ export default class TvShowDetailsComponent {
   @Input() id!: string; // just to show that we can get param from input with configure bindToComponentInputs: true on router app module
   @Input() tvShowResult!: TvShowDetailResult; // from tvShow on resolver with configure bindToComponentInputs: true
   protected currentImg!: string;
-
-  clicker() {
-    console.log('hello');
-  }
   constructor() { }
 }

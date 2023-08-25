@@ -1,4 +1,4 @@
-<dialog #dialog style="width:30vw; padding: 0">
+<dialog #dialog>
   <app-card *ngIf="tvShowResult?.tvShow as detail" [name]="detail.name">
     <button action-icons (click)="dialog.close('cc')">x</button>
     <img main [src]="currentImg || detail.image_path" [alt]="detail.name">
