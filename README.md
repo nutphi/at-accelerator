@@ -11,7 +11,7 @@ The exercise is on exercise{no}-{date}-{feature} branch
 - [exercise6-12-08-2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise6-12-08-2023-signal) for custom directive with date-fns (in x hours-signal)
 - [exercise7-16-08-2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise7-16-08-2023-signal) for pagination with page api
 - [exercise8-20-08-2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise8-20-08-2023-signal) for dialog and reusable component
-- [finalized-25-08-2023](https://github.com/nutphi/at-accelerator/tree/finalized-25-08-2023) fix click next and then prev issue while calling tv show api by wrapping computed with toObservable then call switchmap.
+- [finalize-25-08-2023](https://github.com/nutphi/at-accelerator/tree/finalize-25-08-2023) fix click next and then prev issue while calling tv show api by wrapping computed with toObservable then call switchmap.
   
 # AtAccelerator
 
