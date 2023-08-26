@@ -1,11 +1,18 @@
 # Exercise: https://angular-training.getlearnworlds.com/path-player?courseid=angular-accelerator-program
 The exercise is on exercise{no}-{date}-{feature} branch
-- exercise1-24/07/2023 for observable solution
-- exercise1-24/07/2023-signal for signal solution
-- exercise1-26/07/2023-signal for signal solution (updated - removed switchmap)
-- exercise2-27/07/2023 for observable solution
-- exercise2-27/07/2023-signal for signal solution
-
+- [exercise1-24/07/2023](https://github.com/nutphi/at-accelerator/tree/exercise1-24/07/2023) for observable solution with an api call
+- [exercise1-24/07/2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise1-24/07/2023-signal) for signal solution with an api call
+- [exercise1-26/07/2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise1-26/07/2023-signal) for signal solution (updated - removed switchmap)
+- [exercise2-27/07/2023](https://github.com/nutphi/at-accelerator/tree/exercise2-27/07/2023) for local storage service with observable solution
+- [exercise2-27/07/2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise2-27/07/2023-signal) for local storage service with signal solution
+- [exercise3-24/07/2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise3-24/07/2023-signal) for resolver with api call
+- [exercise4-4/08/2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise4-4/08/2023-signal) for lazy loading with plural pipe
+- [exercise5-8/08/2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise5-8/08/2023-signal) for caching result with shareReplay
+- [exercise6-12-08-2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise6-12-08-2023-signal) for custom directive with date-fns (in x hours-signal)
+- [exercise7-16-08-2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise7-16-08-2023-signal) for pagination with page api
+- [exercise8-20-08-2023-signal](https://github.com/nutphi/at-accelerator/tree/exercise8-20-08-2023-signal) for dialog and reusable component
+- [finalized-25-08-2023](https://github.com/nutphi/at-accelerator/tree/finalized-25-08-2023) fix click next and then prev issue while calling tv show api by wrapping computed with toObservable then call switchmap.
+  
 # AtAccelerator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.
