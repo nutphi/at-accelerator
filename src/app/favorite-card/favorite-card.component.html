@@ -1,10 +1,10 @@
-<app-card [name]="detail.name">
+<app-card [name]="detail.name || ''">
   <div action-icons class="action">
-    <span class="icon-info" [routerLink]="['../details', detail.id]"></span>
-    <span class="icon-bookmark highlight" [appFavoriteToggle]="detail.id"></span>
+    <span class="icon-info" [routerLink]="['../details', detail.id || '']"></span>
+    <span class="icon-bookmark highlight" [appFavoriteToggle]="detail.id || 0"></span>
   </div>
   <div main class="section media">
     <img [src]="detail.image_thumbnail_path">
   </div>
-  <ng-container footer>{{detail.countdown?.air_date | countDown: detail.status }}</ng-container>
+  <ng-container footer>{{detail.countdown?.air_date | countDown: detail.status || 'Ended' }}</ng-container>
 </app-card>
