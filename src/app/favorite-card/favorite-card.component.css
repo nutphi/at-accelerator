@@ -1,0 +1,19 @@
+:host {
+  width: 350px;
+}
+
+.action {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  height: 50px;
+}
+
+.section.media {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+img {
+  width: 100%;
+}

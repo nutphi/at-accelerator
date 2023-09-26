@@ -1,0 +1,25 @@
+:host .detail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 25px;
+  padding: 10px;
+}
+
+:host .episodes-seasons {
+  padding: 10px;
+}
+
+img {
+  width: 40%;
+}
+
+img[main] {
+  width: 100%;
+}
+
+dialog {
+  /* width: 50vw; */
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+}

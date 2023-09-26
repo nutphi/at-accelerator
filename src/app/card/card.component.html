@@ -1,0 +1,11 @@
+<section class="card shadowed">
+  <header>
+    <h4>{{ name }}</h4>
+    <ng-content select="[action-icons]"></ng-content>
+  </header>
+  <ng-content select="[main]"></ng-content>
+  <footer class="footer">
+    <ng-content select="[footer]"></ng-content>
+  </footer>
+</section>
+<ng-content select="[footer-buttons]"></ng-content>

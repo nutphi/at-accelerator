@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import SearchViewComponent from './search-view.component';
+import { PaginatorComponent } from './paginator.component';
 
-describe('SearchViewComponent', () => {
-  let component: SearchViewComponent;
-  let fixture: ComponentFixture<SearchViewComponent>;
+describe('PaginatorComponent', () => {
+  let component: PaginatorComponent;
+  let fixture: ComponentFixture<PaginatorComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SearchViewComponent]
+      declarations: [PaginatorComponent]
     });
-    fixture = TestBed.createComponent(SearchViewComponent);
+    fixture = TestBed.createComponent(PaginatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

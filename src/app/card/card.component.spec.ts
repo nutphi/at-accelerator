@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import SearchViewComponent from './search-view.component';
+import { CardComponent } from './card.component';
 
-describe('SearchViewComponent', () => {
-  let component: SearchViewComponent;
-  let fixture: ComponentFixture<SearchViewComponent>;
+describe('CardComponent', () => {
+  let component: CardComponent;
+  let fixture: ComponentFixture<CardComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SearchViewComponent]
+      imports: [CardComponent]
     });
-    fixture = TestBed.createComponent(SearchViewComponent);
+    fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

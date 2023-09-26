@@ -1,0 +1,25 @@
+<dialog #dialog>
+  <app-card *ngIf="tvShowResult?.tvShow as detail" [name]="detail.name">
+    <button action-icons (click)="dialog.close('cc')">x</button>
+    <img main [src]="currentImg || detail.image_path" [alt]="detail.name">
+    <ng-container footer>
+      <img *ngFor="let src of detail.pictures" [src]="src" (click)="currentImg = src">
+    </ng-container>
+  </app-card>
+</dialog>
+<ng-container *ngIf="tvShowResult?.tvShow as detail">
+  <h1 class="head">{{detail.name}}</h1>
+  <hr class="line">
+  <div class="detail">
+    <img class="img" [src]="detail.image_thumbnail_path">
+    <div class="description" [innerHTML]="detail.description"></div>
+    <div class="rate">Rating: {{detail.rating | number: '1.0-2' }}/10 (rated by {{detail.rating_count}} people)</div>
+  </div>
+  <div class="episodes-seasons">
+    <span>{{ detail.episodes.length | i18nPlural: {"=0": "No episode", "=1": "1 episode", "other": "# episodes"} }}</span>
+    -
+    <span>{{ detail.episodes | maxSeason | i18nPlural: {"=0": "No season", "=1": "1 season", "other": "# seasons"} }}</span>
+  </div>
+</ng-container>
+<button class="secondary" (click)="dialog.showModal()">Show Images</button>
+<button class="primary" routerLink="./../../">< < Back</button>

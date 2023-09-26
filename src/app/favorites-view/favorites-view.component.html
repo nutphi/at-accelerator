@@ -1,1 +1,4 @@
-<p>favorites-view works!</p>
+<ng-container *ngFor="let detail of favorites.favoritesDetailSignal(); trackBy: trackTvShowId">
+  <app-favorite-card [detail]="detail"></app-favorite-card>
+</ng-container>
+
