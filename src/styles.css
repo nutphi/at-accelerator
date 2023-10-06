@@ -1,6 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/mini.css/dist/mini-default.min.css";
 
+:root {
+  --header-back-color: skyblue;
+  --header-fore-color: #4a4a4a;
+  button.primary, [type="button"].primary, [type="submit"].primary, [type="reset"].primary, .button.primary, [role="button"].primary {
+    --button-back-color: skyblue;
+  }
+  --form-border-color: skyblue;
+  --form-back-color: skyblue;
+  --fore-color: skyblue;
+  --back-color: lightblue;
+  --table-border-color: #aaa;
+  --table-border-separator-color: #666;
+  --table-head-back-color: #e6e6e6;
+  --table-head-fore-color: #111;
+  --table-body-back-color: #ccc;
+  --table-body-fore-color: #111;
+  --table-body-alt-back-color: #eee;
+}
+
 table:not(.horizontal) {
   overflow-x: hidden;
   max-height: fit-content;

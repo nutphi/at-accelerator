@@ -1,4 +1,8 @@
-tr.loading td {
+tr.loading>td {
   display: flex;
   justify-content: center;
+}
+
+tr>td>span[class^='icon-'] {
+  cursor: pointer;
 }

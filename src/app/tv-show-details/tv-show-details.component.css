@@ -3,14 +3,26 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   row-gap: 25px;
   padding: 10px;
+  color: #333;
 }
 
 :host .episodes-seasons {
   padding: 10px;
+  color: #333;
+}
+
+h1 {
+  color: #333;
 }
 
 img {
   width: 40%;
+}
+
+dialog {
+  img {
+    max-width: 80vh;
+  }
 }
 
 img[main] {
