@@ -19,10 +19,8 @@ img {
   width: 40%;
 }
 
-dialog {
-  img {
-    max-width: 80vh;
-  }
+dialog img {
+  max-width: 80vh;
 }
 
 img[main] {
