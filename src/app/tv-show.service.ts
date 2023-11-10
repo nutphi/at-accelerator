@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Signal, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TvShowSearch } from './search-view/type';
-import { Observable } from 'rxjs';
+import { Observable, delay } from 'rxjs';
+
 
 @Injectable()
 export class TvShowService {
@@ -23,7 +25,7 @@ export class TvShowService {
   updateSearchResult(term?: string): void {
     this.isLoading.set(true);
     this.searchResult.set(null);
-    this.searchApi(term).subscribe((tvshow: TvShowSearch) => {
+    this.searchApi(term).pipe(delay(3000), takeUntilDestroyed()).subscribe((tvshow: TvShowSearch) => {
       this.isLoading.set(false);
       this.searchResult.set(tvshow);
     });

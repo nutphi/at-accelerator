@@ -9,13 +9,8 @@
   </tr>
   </thead>
   <tbody>
-    <tr class="loading" *ngIf="isLoading">
-      <td rowspan="5">
-       <div class="spinner primary"></div>
-      </td>
-     </tr>
-    <ng-container  *ngIf="tvShowsResult">
-      <tr *ngFor="let tvshow of tvShowsResult.tv_shows">
+    @if (tvShowsResult) {
+      <tr *ngFor="let tvshow of tvShowsResult?.tv_shows">
         <td data-label="Name">{{tvshow.name}}</td>
         <td data-label="Country">{{tvshow.country}}</td>
         <td data-label="Year started">{{tvshow.start_date | date: 'yyyy'}}</td>
@@ -26,6 +21,13 @@
           <span class="icon-link"></span>
         </td>
       </tr>
-    </ng-container>
+    }
+    @else {
+      <tr class="loading">
+        <td rowspan="5">
+          <div class="spinner primary"></div>
+        </td>
+      </tr>
+    }      
   </tbody>
 </table>
